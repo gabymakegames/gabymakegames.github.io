@@ -114,7 +114,7 @@ document.getElementById("content").classList.add("off");
         setLanguage(savedLang);
           document.getElementById("content").classList.remove("off");
         document.getElementById("content").classList.add("ready");
-      },50)
+      },300)
 });
 
 
@@ -129,6 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setLanguage(savedLang);
       document.getElementById("content").classList.remove("off");
        document.getElementById("content").classList.add("ready");
-    },50)
+    },300)
   
+
 });
