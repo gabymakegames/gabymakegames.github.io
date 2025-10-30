@@ -1,0 +1,220 @@
+/* ===========================
+   LOGOS
+=========================== */
+
+/* Logo principal */
+.logo {
+  width: 52px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 10px;
+  filter: drop-shadow(2px 2px 0 #ff0033) drop-shadow(-2px -2px 0 #00d26a);
+  transition: transform 0.25s ease, filter 0.25s ease;
+  cursor: pointer;
+}
+
+/* Efecto hover retro tipo glitch */
+.logo:hover {
+  transform: scale(1.1) rotate(-2deg);
+  filter: drop-shadow(0 0 6px #00ffcc) contrast(1.2);
+}
+
+/* Logo mini del footer */
+.logo-mini {
+  width: 20px;
+  height: auto;
+  vertical-align: middle;
+  filter: drop-shadow(1px 1px 0 #ff0033) drop-shadow(-1px -1px 0 #00d26a);
+  transition: transform 0.3s ease;
+}
+
+.logo-mini:hover {
+  transform: scale(1.2) rotate(3deg);
+}
+
+/* ===========================
+   ESTRUCTURA GENERAL
+=========================== */
+
+body {
+  position: relative;
+  z-index: 0;
+  background: none; /* se usa solo el before */
+  overflow-x: hidden; /* evita scroll horizontal */
+  overflow-y: hidden; /* evita scroll vertical al rotar */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: url("../assets/bkg.png") 0 0 repeat;
+  background-size: repeat;
+  transform: translate(-50%, -50%) rotate(var(--bg-rotation, 45deg));
+  z-index: -1;
+  pointer-events: none;
+}
+
+header, main, footer {
+  z-index: 10; /* asegura que estén arriba de las figuras */
+}
+
+/* ===========================
+   HEADER / TOP BAR
+=========================== */
+
+.top-bar {
+  background: #0073ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  border-bottom: 4px solid #ffef00;
+  position: relative;
+  z-index: 1000;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  height: 48px;
+  width: auto;
+  filter: drop-shadow(2px 2px 0 #000);
+  transform: translateY(2px); /* pequeño ajuste óptico */
+}
+
+.top-bar h1 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* ===========================
+   NAVEGACIÓN Y CONTROLES
+=========================== */
+
+.top-bar nav a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.2s;
+}
+
+.top-bar nav a:hover {
+  color: #ffef00;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 12px;
+}
+
+#lang-select {
+  padding: 4px 6px;
+  border: 2px solid #000;
+  background: #fff;
+}
+
+#theme-toggle {
+  background: #ffef00;
+  border: 2px solid #000;
+  font-weight: bold;
+  padding: 4px 10px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #000;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+#theme-toggle:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #000;
+}
+
+
+
+
+/* === FUTURE PRESENTATION CRT EFFECT === */
+.future-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  background: #000;
+  color: #00ffcc;
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+  border: 3px solid #00c87a;
+  box-shadow: 0 0 12px #00ffcc;
+  animation: crtPowerOn 1.2s ease-out;
+  position: relative;
+}
+
+.future-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 200, 0.05) 0px,
+    rgba(0, 255, 200, 0.05) 2px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0) 4px
+  );
+  mix-blend-mode: screen;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.future-title {
+  font-size: 2rem;
+  color: #ffeb00;
+  text-shadow: 0 0 10px #00ffcc;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: textAppear 1.4s ease forwards 0.8s;
+}
+
+.future-subtitle {
+  font-size: 1.3rem;
+  margin-top: 10px;
+  color: #d5ffe9;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: textAppear 1.4s ease forwards 1.4s;
+}
+
+@keyframes crtPowerOn {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  40% {
+    transform: scaleY(0.05);
+    opacity: 1;
+    background: #fff;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes textAppear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

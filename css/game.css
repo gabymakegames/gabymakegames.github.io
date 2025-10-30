@@ -1,0 +1,133 @@
+/* contenedor conjunto imágenes + video */
+.game-media-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  margin: 20px auto;
+  max-width: 1000px;
+}
+
+/* lado de imágenes o slider */
+.game-media {
+  flex: 1 1 480px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  justify-items: center;
+}
+
+.game-thumb {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #ff0033;
+}
+
+/* carrusel */
+.carousel {
+  flex: 1 1 480px;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #ff0033;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.carousel-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffef00;
+  border: 2px solid #000;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 2px 2px 0 #00d26a;
+  z-index: 10;
+}
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+/* video */
+.video-wrapper {
+  flex: 1 1 480px;
+  max-width: 480px;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #004cff;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  display: block;
+  object-fit: cover;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .game-media-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .video-wrapper {
+    max-width: 100%;
+  }
+}
+
+
+.carousel-img,
+.game-thumb {
+  aspect-ratio: 16/9; /* 👈 alargá las capturas */
+}
+
+
+.coming-future {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.troy-img {
+  width: 180px;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  background: #ffef00;
+}
+
+.quote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #444;
+  max-width: 400px;
+  text-align: left;
+}
+
+.quote .highlight {
+  color: #0073ff;
+  font-weight: bold;
+}
+
+.game-description {
+  white-space: pre-wrap;
+  font-family: inherit;
+}
