@@ -1,14 +1,5 @@
 const gamesData_es = {
-    budukutua: {
-      title: "Budukutua",
-      subtitle: "Una aventura pixelada con alma propia",
-      description:
-        "In a world at peace, the evil that has always existed could not bear to see so much happiness among the beings. So, it decided to extinguish the fires that sustained the three Crystals of Order...Now, your task is to find these crystals and reactivate them. You will need to make your way through the world, discovering new skills, making new friends, and fighting until the end to restore order to a new world.",
-      images: ["assets/budukutua/image_1.jpg","assets/budukutua/image_2.jpg","assets/budukutua/image_3.jpg","assets/budukutua/image_4.jpg","assets/budukutua/image_5.jpg","assets/budukutua/image_6.jpg"],
-      videos: ["assets/budukutua/trailer.mp4"],
-     
-       links: [{ url: "#", icon: "💾", text: "Próximamente" }],
-    },
+  
     Jreverse: {
       title: "J-Reverse",
       subtitle: "¡Un juego de plataformas y puzzles donde el suelo decide tu dirección!",
@@ -80,4 +71,5 @@ Controles simples, jugabilidad adictiva y una vibra pixel-art nostálgica — es
       videos: [],
       links: [{ url: "#", icon: "🧠", text: "Pensando..." }],
     },
+
   };
