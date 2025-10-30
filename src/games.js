@@ -96,7 +96,7 @@ function initGamesSection() {
     const linksHTML = g.links
       .map(
         (l) =>
-          `<a href="${l.url}" class="game-link" target="_blank">${l.icon} ${l.text}</a>`
+          `<a href="${l.url}" class="game-link" target="_blank">${l.icon} ${getI18nKey(l.text)}</a>`
       )
       .join(" ");
 

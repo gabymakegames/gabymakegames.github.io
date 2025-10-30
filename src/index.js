@@ -36,35 +36,6 @@ loadPage(initialPage);
 
 
 
-// --- CAMBIO DE TEMA FRÍO / CÁLIDO ---
-/*const themeToggle = document.getElementById("theme-toggle");
-
-// función para aplicar tema
-function applyTheme(mode) {
-  const link = document.querySelector('link[rel="stylesheet"]');
-  if (mode === "frio") {
-    link.href = "css/styles-megadrive-light.css";
-    themeToggle.textContent = "🔥";//Modo Cálido
-  } else {
-    link.href = "css/styles-megadrive.css";
-    themeToggle.textContent = "❄️"; // Modo Frío
-  }
-  localStorage.setItem("theme", mode);
-}
-
-// cargar tema guardado
-const savedTheme = localStorage.getItem("theme") || "calido";
-applyTheme(savedTheme);
-
-// alternar al hacer clic
-themeToggle.addEventListener("click", () => {
-  const current = localStorage.getItem("theme") || "calido";
-  const next = current === "calido" ? "frio" : "calido";
-  applyTheme(next);
-});*/
-
-
-
 // --- GENERADOR DE FIGURAS MEMPHIS FINAL ---
 const colors = ["#ffef00", "#ff0033", "#00d26a", "#004cff"];
 const usedPositions = [];
@@ -173,4 +144,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // aplicamos el ángulo dinámicamente al pseudo-elemento
   document.body.style.setProperty("--bg-rotation", `${randomAngle}deg`);
+
+
 });
+
+
+document.addEventListener("click", (e) => {
+  const link = e.target.closest("[data-page]");
+  if (!link) return;
+
+  e.preventDefault();
+  const page = link.dataset.page;
+  loadPage(page); // tu función que hace fetch y reemplaza #content
+});
+
+

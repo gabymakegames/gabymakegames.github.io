@@ -51,7 +51,7 @@
 .carousel-btn {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-15%);
   background: #ffef00;
   border: 2px solid #000;
   cursor: pointer;

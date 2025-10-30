@@ -1,5 +1,14 @@
 const gamesData_en = {
-  
+    budukutua: {
+      title: "Budukutua",
+      subtitle: "Una aventura pixelada con alma propia",
+      description:
+        "In a world at peace, the evil that has always existed could not bear to see so much happiness among the beings. So, it decided to extinguish the fires that sustained the three Crystals of Order...Now, your task is to find these crystals and reactivate them. You will need to make your way through the world, discovering new skills, making new friends, and fighting until the end to restore order to a new world.",
+      images: ["assets/budukutua/image_1.jpg","assets/budukutua/image_2.jpg","assets/budukutua/image_3.jpg","assets/budukutua/image_4.jpg","assets/budukutua/image_5.jpg","assets/budukutua/image_6.jpg"],
+      videos: ["assets/budukutua/trailer.mp4"],
+     
+       links: [{ url: "#", icon: "💾", text: "Próximamente" }],
+    },
     Jreverse: {
       title: "J-Reverse",
       subtitle: "A puzzle–platformer where the floor itself decides your direction!",
@@ -12,7 +21,7 @@ With 17 handcrafted levels, every challenge is a test of timing and logic.
 Can you find the smartest way to reach the end?`,
       images: ["assets/j-reverse/img_1.jpg","assets/j-reverse/img_2.jpg","assets/j-reverse/img_3.jpg","assets/j-reverse/img_2.jpg"],
       videos: [],
-       links: [{ url: "https://gabymakegames.itch.io/j-reverse", icon: "💾", text: "Descargar" }],
+       links: [{ url: "https://gabymakegames.itch.io/j-reverse", icon: "💾", text: "donwload" }],
     },
 
     infinityInvaders: {
@@ -27,7 +36,7 @@ How long can you survive the alien invasion?
 Infinity Invaders brings back the golden age of arcade space battles — pure action, no limits!`,
       images: ["assets/infinityInvaders/img_1.jpg","assets/infinityInvaders/img_2.jpg","assets/infinityInvaders/img_3.jpg"],
       videos: [],
-       links: [{ url: "https://gabymakegames.itch.io/infinity-invaders", icon: "💾", text: "Descargar" }],
+       links: [{ url: "https://gabymakegames.itch.io/infinity-invaders", icon: "💾", text: "donwload" }],
     },
 
     pushme: {
@@ -43,7 +52,7 @@ Infinity Invaders brings back the golden age of arcade space battles — pure ac
           Can you glide, push, and steer your paper plane to victory?`,
       images: ["assets/pushme/4.png","assets/pushme/5.png","assets/pushme/6.png"],
       videos: [],
-      links: [{ url: "https://gabymakegames.itch.io/pushme", icon: "💾", text: "Descargar" }],
+      links: [{ url: "https://gabymakegames.itch.io/pushme", icon: "💾", text: "donwload" }],
     },
     upDown: {
       title: "UpDown",
@@ -62,7 +71,7 @@ Featuring 4 unique game modes:
 Simple controls, addictive gameplay, and a nostalgic pixel-art vibe — this is gravity, flipped.`,
       images: ["assets/updown/1.png","assets/updown/2.png","assets/updown/3.png","assets/updown/4.png",],
       videos: [],
-      links: [{ url: "https://gabymakegames.itch.io/updown", icon: "💾", text: "Descargar" }],
+      links: [{ url: "https://gabymakegames.itch.io/updown", icon: "💾", text: "donwload" }],
     },
     next: {
       title: "Coming soon...",
@@ -73,5 +82,4 @@ Simple controls, addictive gameplay, and a nostalgic pixel-art vibe — this is 
       videos: [],
       links: [{ url: "#", icon: "🧠", text: "Pensando..." }],
     },
-
   };

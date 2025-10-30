@@ -5,6 +5,7 @@ const translations = {
     navAbout: "Sobre mí",
     navOther: "Otras cosas",
     subtitle: "Desarrollando juegos indie desde el año 20XX...",
+    myGames : "🎮 Mis Juegos",
 
    // 🏠 HOME
   homeHeading: "👾 Bienvenido a <span>Gabymakegames</span>",
@@ -18,6 +19,7 @@ const translations = {
   about2: "Hago juegos por amor, en mis tiempos libres, desde casa.",
   about3: "Mis juegos son sencillos, retro y hechos a mano, con el corazón y de una manera muy artesanal.",
   about4: "Solo soy un tipo tomando mates y haciendo juegos desde su casa.",
+  donwload: "Descargar",
   
   l1: "Blast Processing",
   l2: "EL cerebro de  la bestia",
@@ -52,8 +54,10 @@ const translations = {
     about2: "I make games out of love, in my free time, from home.",
     about3: "My games are simple, retro, and handcrafted with heart, made in a truly artisanal way.",
     about4: "Just a guy at home, sipping mate and making games.",
+    donwload: "Download",
     aboutWorkTitle: "🎮 What I do",
-    
+     myGames : "🎮 My Games",
+
 l1: "Blast Processing",
   l2: "Now you’re playing with power & Super Power!",
   l3: "Live in your world. Play in ours.",
@@ -74,11 +78,13 @@ function setLanguage(lang) {
       el.innerHTML = translations[lang][key];
     }
   });
-
-
-
 }
 
+function getI18nKey(key) {
+  const lang = localStorage.getItem("lang") || "es";
+  const dict = translations[lang];
+  return dict && dict[key] ? dict[key] : key; // si no existe, devuelve la key
+}
 
 // --- Selector de idioma ---
 const langSelect = document.getElementById("lang-select");
@@ -94,4 +100,35 @@ langSelect.addEventListener("change", (e) => {
   setLanguage(lang);
   localStorage.setItem("lang", lang); // guarda la preferencia
   if (initGamesSection) initGamesSection()
+});
+
+
+navigation.addEventListener("navigate", e => {
+  document.getElementById("content").classList.remove("ready");
+document.getElementById("content").classList.add("off");
+    console.log(e.destination.url);
+    setTimeout(function(){  
+      console.log(2)
+      const savedLang = localStorage.getItem("lang") || "es";
+        langSelect.value = savedLang;
+        setLanguage(savedLang);
+          document.getElementById("content").classList.remove("off");
+        document.getElementById("content").classList.add("ready");
+      },50)
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // tu código acá
+  console.log("DOM listo");
+
+    setTimeout(function(){  
+    console.log(2)
+    const savedLang = localStorage.getItem("lang") || "es";
+      langSelect.value = savedLang;
+      setLanguage(savedLang);
+      document.getElementById("content").classList.remove("off");
+       document.getElementById("content").classList.add("ready");
+    },50)
+  
 });
